@@ -8,16 +8,15 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    @IBOutlet var bg1: UIImageView!
+    
     override func viewDidLoad() {
-        super.viewDidLoad()//nice
-        print("joe mama")
-        print("sugoma")
+        super.viewDidLoad()
         
-        print("hello")
-        // Do any additional setup after loading the view.
+        bg1 = UIImageView(frame: UIScreen.main.bounds)
+        bg1.image = UIImage(named: "bg1")
+        bg1.contentMode = .scaleAspectFill
+        view.insertSubview(bg1, at: 0)
+        
     }
-
-
 }
-
