@@ -9,21 +9,33 @@
 /* Begin PBXBuildFile section */
 		44209BC626FC8A1A00C11555 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44209BC526FC8A1A00C11555 /* AppDelegate.swift */; };
 		44209BC826FC8A1A00C11555 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44209BC726FC8A1A00C11555 /* SceneDelegate.swift */; };
-		44209BCA26FC8A1A00C11555 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44209BC926FC8A1A00C11555 /* ViewController.swift */; };
+		44209BCA26FC8A1A00C11555 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44209BC926FC8A1A00C11555 /* HomeViewController.swift */; };
 		44209BCD26FC8A1A00C11555 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44209BCB26FC8A1A00C11555 /* Main.storyboard */; };
 		44209BCF26FC8A2200C11555 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 44209BCE26FC8A2200C11555 /* Assets.xcassets */; };
 		44209BD226FC8A2200C11555 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44209BD026FC8A2200C11555 /* LaunchScreen.storyboard */; };
+		447B4F452707647C0084FC98 /* MedsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447B4F442707647C0084FC98 /* MedsViewController.swift */; };
+		447B4F47270764990084FC98 /* JournalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447B4F46270764990084FC98 /* JournalViewController.swift */; };
+		447B4F4C2707651F0084FC98 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447B4F4B2707651F0084FC98 /* LogInViewController.swift */; };
+		447B4F4E270765360084FC98 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447B4F4D270765360084FC98 /* RegistrationViewController.swift */; };
+		447B4F50270767AF0084FC98 /* AddMedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447B4F4F270767AF0084FC98 /* AddMedViewController.swift */; };
+		447B4F52270767BB0084FC98 /* EditMedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447B4F51270767BB0084FC98 /* EditMedViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		44209BC226FC8A1A00C11555 /* Clynical.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Clynical.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		44209BC526FC8A1A00C11555 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		44209BC726FC8A1A00C11555 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		44209BC926FC8A1A00C11555 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		44209BC926FC8A1A00C11555 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		44209BCC26FC8A1A00C11555 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		44209BCE26FC8A2200C11555 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		44209BD126FC8A2200C11555 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		44209BD326FC8A2200C11555 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		447B4F442707647C0084FC98 /* MedsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedsViewController.swift; sourceTree = "<group>"; };
+		447B4F46270764990084FC98 /* JournalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalViewController.swift; sourceTree = "<group>"; };
+		447B4F4B2707651F0084FC98 /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
+		447B4F4D270765360084FC98 /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
+		447B4F4F270767AF0084FC98 /* AddMedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMedViewController.swift; sourceTree = "<group>"; };
+		447B4F51270767BB0084FC98 /* EditMedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditMedViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +68,85 @@
 		44209BC426FC8A1A00C11555 /* Clynical */ = {
 			isa = PBXGroup;
 			children = (
-				44209BC526FC8A1A00C11555 /* AppDelegate.swift */,
-				44209BC726FC8A1A00C11555 /* SceneDelegate.swift */,
-				44209BC926FC8A1A00C11555 /* ViewController.swift */,
-				44209BCB26FC8A1A00C11555 /* Main.storyboard */,
-				44209BCE26FC8A2200C11555 /* Assets.xcassets */,
-				44209BD026FC8A2200C11555 /* LaunchScreen.storyboard */,
-				44209BD326FC8A2200C11555 /* Info.plist */,
+				447B4F42270762DC0084FC98 /* Resources */,
+				447B4F41270762D70084FC98 /* Models */,
+				447B4F40270762C30084FC98 /* Views */,
+				447B4F3F270762BD0084FC98 /* Controllers */,
 			);
 			path = Clynical;
+			sourceTree = "<group>";
+		};
+		447B4F3F270762BD0084FC98 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				447B4F49270764F20084FC98 /* Other */,
+				447B4F48270764AD0084FC98 /* Core Tabs */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		447B4F40270762C30084FC98 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				44209BCE26FC8A2200C11555 /* Assets.xcassets */,
+				447B4F43270763210084FC98 /* Storyboards */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		447B4F41270762D70084FC98 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		447B4F42270762DC0084FC98 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				44209BD326FC8A2200C11555 /* Info.plist */,
+				44209BC526FC8A1A00C11555 /* AppDelegate.swift */,
+				44209BC726FC8A1A00C11555 /* SceneDelegate.swift */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		447B4F43270763210084FC98 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				44209BCB26FC8A1A00C11555 /* Main.storyboard */,
+				44209BD026FC8A2200C11555 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		447B4F48270764AD0084FC98 /* Core Tabs */ = {
+			isa = PBXGroup;
+			children = (
+				44209BC926FC8A1A00C11555 /* HomeViewController.swift */,
+				447B4F442707647C0084FC98 /* MedsViewController.swift */,
+				447B4F46270764990084FC98 /* JournalViewController.swift */,
+			);
+			path = "Core Tabs";
+			sourceTree = "<group>";
+		};
+		447B4F49270764F20084FC98 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				447B4F4F270767AF0084FC98 /* AddMedViewController.swift */,
+				447B4F51270767BB0084FC98 /* EditMedViewController.swift */,
+				447B4F4A270764F90084FC98 /* Onboarding */,
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
+		447B4F4A270764F90084FC98 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				447B4F4B2707651F0084FC98 /* LogInViewController.swift */,
+				447B4F4D270765360084FC98 /* RegistrationViewController.swift */,
+			);
+			path = Onboarding;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,9 +219,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				44209BCA26FC8A1A00C11555 /* ViewController.swift in Sources */,
+				44209BCA26FC8A1A00C11555 /* HomeViewController.swift in Sources */,
+				447B4F52270767BB0084FC98 /* EditMedViewController.swift in Sources */,
 				44209BC626FC8A1A00C11555 /* AppDelegate.swift in Sources */,
+				447B4F4C2707651F0084FC98 /* LogInViewController.swift in Sources */,
+				447B4F50270767AF0084FC98 /* AddMedViewController.swift in Sources */,
 				44209BC826FC8A1A00C11555 /* SceneDelegate.swift in Sources */,
+				447B4F4E270765360084FC98 /* RegistrationViewController.swift in Sources */,
+				447B4F452707647C0084FC98 /* MedsViewController.swift in Sources */,
+				447B4F47270764990084FC98 /* JournalViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -288,7 +376,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = U6JF3QHKHZ;
-				INFOPLIST_FILE = Clynical/Info.plist;
+				INFOPLIST_FILE = Clynical/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -307,7 +395,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = U6JF3QHKHZ;
-				INFOPLIST_FILE = Clynical/Info.plist;
+				INFOPLIST_FILE = Clynical/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
