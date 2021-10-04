@@ -16,7 +16,7 @@
 		442A83092708C925006D2082 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442A83082708C925006D2082 /* AuthManager.swift */; };
 		442A830B2708CA02006D2082 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442A830A2708CA02006D2082 /* DatabaseManager.swift */; };
 		442A830D2708CA35006D2082 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442A830C2708CA35006D2082 /* StorageManager.swift */; };
-		442A83112708D0A0006D2082 /* Auth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 442A83102708D0A0006D2082 /* Auth.storyboard */; };
+		44339FEE270B77080030F2EB /* StartUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44339FED270B77080030F2EB /* StartUpViewController.swift */; };
 		447B4F452707647C0084FC98 /* MedsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447B4F442707647C0084FC98 /* MedsViewController.swift */; };
 		447B4F47270764990084FC98 /* JournalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447B4F46270764990084FC98 /* JournalViewController.swift */; };
 		447B4F4C2707651F0084FC98 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447B4F4B2707651F0084FC98 /* LogInViewController.swift */; };
@@ -39,7 +39,7 @@
 		442A83082708C925006D2082 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AuthManager.swift; path = ../../../../../../../Applications/AuthManager.swift; sourceTree = "<group>"; };
 		442A830A2708CA02006D2082 /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
 		442A830C2708CA35006D2082 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
-		442A83102708D0A0006D2082 /* Auth.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Auth.storyboard; sourceTree = "<group>"; };
+		44339FED270B77080030F2EB /* StartUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartUpViewController.swift; sourceTree = "<group>"; };
 		447B4F442707647C0084FC98 /* MedsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedsViewController.swift; sourceTree = "<group>"; };
 		447B4F46270764990084FC98 /* JournalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalViewController.swift; sourceTree = "<group>"; };
 		447B4F4B2707651F0084FC98 /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
@@ -153,7 +153,6 @@
 		447B4F43270763210084FC98 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
-				442A83102708D0A0006D2082 /* Auth.storyboard */,
 				44209BCB26FC8A1A00C11555 /* Main.storyboard */,
 				44209BD026FC8A2200C11555 /* LaunchScreen.storyboard */,
 			);
@@ -182,6 +181,7 @@
 		447B4F4A270764F90084FC98 /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
+				44339FED270B77080030F2EB /* StartUpViewController.swift */,
 				447B4F4B2707651F0084FC98 /* LogInViewController.swift */,
 				447B4F4D270765360084FC98 /* RegistrationViewController.swift */,
 			);
@@ -257,7 +257,6 @@
 			files = (
 				44209BD226FC8A2200C11555 /* LaunchScreen.storyboard in Resources */,
 				44BF06CA2708BED300DEDA8D /* GoogleService-Info.plist in Resources */,
-				442A83112708D0A0006D2082 /* Auth.storyboard in Resources */,
 				44209BCF26FC8A2200C11555 /* Assets.xcassets in Resources */,
 				44209BCD26FC8A1A00C11555 /* Main.storyboard in Resources */,
 			);
@@ -314,6 +313,7 @@
 			files = (
 				44209BCA26FC8A1A00C11555 /* HomeViewController.swift in Sources */,
 				442A830B2708CA02006D2082 /* DatabaseManager.swift in Sources */,
+				44339FEE270B77080030F2EB /* StartUpViewController.swift in Sources */,
 				447B4F52270767BB0084FC98 /* EditMedViewController.swift in Sources */,
 				442A830D2708CA35006D2082 /* StorageManager.swift in Sources */,
 				44209BC626FC8A1A00C11555 /* AppDelegate.swift in Sources */,
