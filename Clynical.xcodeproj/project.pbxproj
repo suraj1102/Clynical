@@ -20,7 +20,7 @@
 		447B4F452707647C0084FC98 /* MedsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447B4F442707647C0084FC98 /* MedsViewController.swift */; };
 		447B4F47270764990084FC98 /* JournalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447B4F46270764990084FC98 /* JournalViewController.swift */; };
 		447B4F4C2707651F0084FC98 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447B4F4B2707651F0084FC98 /* LogInViewController.swift */; };
-		447B4F4E270765360084FC98 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447B4F4D270765360084FC98 /* RegistrationViewController.swift */; };
+		447B4F4E270765360084FC98 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447B4F4D270765360084FC98 /* SignUpViewController.swift */; };
 		447B4F50270767AF0084FC98 /* AddMedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447B4F4F270767AF0084FC98 /* AddMedViewController.swift */; };
 		447B4F52270767BB0084FC98 /* EditMedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447B4F51270767BB0084FC98 /* EditMedViewController.swift */; };
 		44BF06CA2708BED300DEDA8D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 44BF06C92708BED300DEDA8D /* GoogleService-Info.plist */; };
@@ -43,7 +43,7 @@
 		447B4F442707647C0084FC98 /* MedsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedsViewController.swift; sourceTree = "<group>"; };
 		447B4F46270764990084FC98 /* JournalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalViewController.swift; sourceTree = "<group>"; };
 		447B4F4B2707651F0084FC98 /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
-		447B4F4D270765360084FC98 /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
+		447B4F4D270765360084FC98 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		447B4F4F270767AF0084FC98 /* AddMedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMedViewController.swift; sourceTree = "<group>"; };
 		447B4F51270767BB0084FC98 /* EditMedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditMedViewController.swift; sourceTree = "<group>"; };
 		44BF06C92708BED300DEDA8D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -183,7 +183,7 @@
 			children = (
 				44339FED270B77080030F2EB /* StartUpViewController.swift */,
 				447B4F4B2707651F0084FC98 /* LogInViewController.swift */,
-				447B4F4D270765360084FC98 /* RegistrationViewController.swift */,
+				447B4F4D270765360084FC98 /* SignUpViewController.swift */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -320,7 +320,7 @@
 				447B4F4C2707651F0084FC98 /* LogInViewController.swift in Sources */,
 				447B4F50270767AF0084FC98 /* AddMedViewController.swift in Sources */,
 				44209BC826FC8A1A00C11555 /* SceneDelegate.swift in Sources */,
-				447B4F4E270765360084FC98 /* RegistrationViewController.swift in Sources */,
+				447B4F4E270765360084FC98 /* SignUpViewController.swift in Sources */,
 				447B4F452707647C0084FC98 /* MedsViewController.swift in Sources */,
 				447B4F47270764990084FC98 /* JournalViewController.swift in Sources */,
 				442A83092708C925006D2082 /* AuthManager.swift in Sources */,

@@ -43,33 +43,29 @@ class StartUpViewController: UIViewController {
     }
     
     
-    private func addSubviews() {
-        // Adding each subview to view
-//        view.addSubview(headerTitle)
-        view.addSubview(headerImage)
-        view.addSubview(logInButton)
-        view.addSubview(signUpButton)
-
+    @IBAction func didTapLogInButton(_ sender: Any) {
+        let logInVC = LogInViewController()
+        present(logInVC, animated: true)
+    }
+   
+    @IBAction func didTapSignUpButton(_ sender: Any) {
+        let SignUpVC = SignUpViewController()
+        present(SignUpVC, animated: true)
     }
     
-    @objc func didTapLogInButton() {
-        
-    }
-    
-    @objc func didTapSignUpButton() {
-        
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        addSubviews()
+        overrideUserInterfaceStyle = .dark
 
         // Adding backgroud
         authBG = UIImageView(frame: UIScreen.main.bounds)
         authBG.image = UIImage(named: "authBG")
         authBG.contentMode = .scaleAspectFill
         view.insertSubview(authBG, at: 0)
+        
+        // Corner radius for login button
+        logInButton.layer.cornerRadius = 6
         
     }
 
