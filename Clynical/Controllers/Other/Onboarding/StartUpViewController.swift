@@ -23,7 +23,7 @@ class StartUpViewController: UIViewController {
             
             // Show log in screen
             
-            let homeVC = HomeViewController()
+            let homeVC = storyboard?.instantiateViewController(identifier: "home_vc") as? HomeViewController
             homeVC.modalPresentationStyle = .fullScreen
             present(homeVC, animated: false)
             
@@ -104,6 +104,9 @@ class StartUpViewController: UIViewController {
         logInButton.backgroundColor = UIColor.init(named: "logInButtonBG")
         logInButton.layer.cornerRadius = 7.0
         logInButton.frame = CGRect(x: bottomView.width * 0.20, y: 5 + (bottomView.height * 0.10), width: bottomView.width * 0.60, height: bottomView.height * 0.08)
+                
+        logInButton.addTarget(, action: didTapLogInButton, for: .touchUpInside)
+
         
         // "Don't have an account?" Label
         let doesntHaveAccountLabel = UILabel()
@@ -134,6 +137,10 @@ class StartUpViewController: UIViewController {
         signUpButton.setTitleColor(.white, for: .normal)
         signUpButton.contentHorizontalAlignment = .left
         signUpButton.frame = CGRect(x: bottomView.width * 0.60, y: (bottomView.height * 0.20) - 5, width: bottomView.width * 0.40, height: bottomView.height * 0.10)
+    }
+    
+    private func didTapLogInButton() {
+        
     }
     
     override func viewDidLoad() {
