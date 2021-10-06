@@ -107,36 +107,37 @@ class StartUpViewController: UIViewController {
                 
 //        logInButton.addTarget(Any?, action: didTapLogInButton, for: .touchUpInside)
 
-        
-        // "Don't have an account?" Label
-        let doesntHaveAccountLabel = UILabel()
-        bottomView.addSubview(doesntHaveAccountLabel)
-        doesntHaveAccountLabel.text = "Don't have an account?"
-        doesntHaveAccountLabel.textAlignment = .right
-        doesntHaveAccountLabel.textColor = .white
-        doesntHaveAccountLabel.font = .systemFont(ofSize: 17.0)
-        doesntHaveAccountLabel.frame = CGRect(x: 0, y: (bottomView.height * 0.20) - 5, width: bottomView.width * 0.60, height: bottomView.height * 0.10)
-        
+   
         // Sign up button
         let signUpButton = UIButton()
         bottomView.addSubview(signUpButton)
         
-        let attrs : [NSAttributedString.Key : Any] = [
+            // Adding "Don't have an account?" Label in the button
+        let labelAttrs : [NSAttributedString.Key : Any] = [
+            NSAttributedString.Key.font : UIFont.systemFont(ofSize: 17.0),
+            NSAttributedString.Key.foregroundColor : UIColor.white
+        ]
+        
+        let labelStr = NSMutableAttributedString(string:"Don't have an account?", attributes:labelAttrs)
+        
+        let buttonAttrs : [NSAttributedString.Key : Any] = [
             NSAttributedString.Key.font : UIFont.systemFont(ofSize: 17.0),
             NSAttributedString.Key.foregroundColor : UIColor.white,
             NSAttributedString.Key.underlineStyle : NSUnderlineStyle.single.rawValue
         ]
         
-        let attributedString = NSMutableAttributedString(string:"")
-        let buttonTitleStr = NSMutableAttributedString(string:" Sign Up.", attributes:attrs)
-        attributedString.append(buttonTitleStr)
+        let buttonTitleStr = NSMutableAttributedString(string:" Sign Up.", attributes:buttonAttrs)
         
         // ^ For adding underline.
         
-        signUpButton.setAttributedTitle(attributedString, for: .normal)
+        let buttonStr = NSMutableAttributedString()
+        buttonStr.append(labelStr)
+        buttonStr.append(buttonTitleStr)
+        
+        signUpButton.setAttributedTitle(buttonStr, for: .normal)
         signUpButton.setTitleColor(.white, for: .normal)
-        signUpButton.contentHorizontalAlignment = .left
-        signUpButton.frame = CGRect(x: bottomView.width * 0.60, y: (bottomView.height * 0.20) - 5, width: bottomView.width * 0.40, height: bottomView.height * 0.10)
+        signUpButton.contentHorizontalAlignment = .center
+        signUpButton.frame = CGRect(x: 0, y: (bottomView.height * 0.20) - 5, width: bottomView.width, height: bottomView.height * 0.10)
     }
     
     private func didTapLogInButton() {
