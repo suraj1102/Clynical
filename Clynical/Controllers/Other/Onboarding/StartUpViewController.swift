@@ -23,7 +23,7 @@ class StartUpViewController: UIViewController {
             
             // Show log in screen
             
-            let homeVC = storyboard?.instantiateViewController(identifier: "home_vc") as? HomeViewController
+            let homeVC = HomeViewController()
             homeVC.modalPresentationStyle = .fullScreen
             present(homeVC, animated: false)
             
@@ -105,7 +105,7 @@ class StartUpViewController: UIViewController {
         logInButton.layer.cornerRadius = 7.0
         logInButton.frame = CGRect(x: bottomView.width * 0.20, y: 5 + (bottomView.height * 0.10), width: bottomView.width * 0.60, height: bottomView.height * 0.08)
                 
-        logInButton.addTarget(, action: didTapLogInButton, for: .touchUpInside)
+//        logInButton.addTarget(Any?, action: didTapLogInButton, for: .touchUpInside)
 
         
         // "Don't have an account?" Label
