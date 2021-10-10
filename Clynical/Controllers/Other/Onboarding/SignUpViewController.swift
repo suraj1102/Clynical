@@ -247,8 +247,19 @@ class SignUpViewController: UIViewController {
         
         guard let username = usernameField.text, !username.isEmpty,
               let email = emailField.text, !email.isEmpty,
-              let password = passwordField.text, !password.isEmpty, password.count >= 8 else{
+              let password = passwordField.text, !password.isEmpty, password.count >= 6 else{
             return
+       
+        }
+        AuthManager.shared.registerNewUser(username: username, email: email, password: password){ registered in
+            DispatchQueue.main.async {
+                if registered{
+                    //all good to go
+                }
+                else {
+                    //failed
+                }
+            }
         }
     }
     
@@ -283,6 +294,7 @@ class SignUpViewController: UIViewController {
         contentView.addSubview(continueSignUpButton)
     }
 }
+
     
 extension SignUpViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {

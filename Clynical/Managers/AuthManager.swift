@@ -12,12 +12,12 @@ public class AuthManager {
     
     // MARK : - Public
     
-    public func registerNewUser(username: String, email: String, password: String) {
+    public func registerNewUser(username: String, email: String, password: String, completion: @escaping (Bool)->Void) {
         /*
          1. Check if username is available
          2. Check if email is available
          3. Creat Account
-         4. Insert ccount to database
+         4. Insert account to database
          */
         
         // Step 1 and 2
@@ -25,11 +25,28 @@ public class AuthManager {
             if canCreate {
                 // Step 3 and 4
                 Auth.auth().createUser(withEmail: email, password: password) { result, error in
-                    if error == nil, result != nil {
+                    guard error == nil, result != nil else {
+                    //Firebase auth could not create account
+                        completion(false)
                         return
                     }
-                    // 
+                    // Insert into database
+                    DatabaseManager.shared.insertNewUser(with: email, username: username) { inserted in
+                        if inserted {
+                            completion(true)
+                            return
+                        }
+                        else {
+                            // Failed to insert to database
+                            completion(false)
+                            return
+                        }
+                    }
                 }
+            }
+            else{
+                //either username or email does not
+                completion(false)
             }
         }
     }
