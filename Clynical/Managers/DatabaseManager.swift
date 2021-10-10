@@ -10,4 +10,10 @@ import FirebaseDatabase
 public class DatabaseManager {
     static let shared = DatabaseManager()
     
+    // MARK: - Public
+
+    public func canCreateNewUser(with email: String, username: String, completion: @escaping (Bool) -> Void) {
+        
+    }
+    
 }    

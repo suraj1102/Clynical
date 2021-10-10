@@ -98,10 +98,22 @@
 			children = (
 				447B4F42270762DC0084FC98 /* Resources */,
 				447B4F41270762D70084FC98 /* Models */,
+				4427B4F6270F35BF0099A42B /* Managers */,
 				447B4F40270762C30084FC98 /* Views */,
 				447B4F3F270762BD0084FC98 /* Controllers */,
 			);
 			path = Clynical;
+			sourceTree = "<group>";
+		};
+		4427B4F6270F35BF0099A42B /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				4427B4F4270D683A0099A42B /* AuthManager.swift */,
+				442A830A2708CA02006D2082 /* DatabaseManager.swift */,
+				442A830C2708CA35006D2082 /* StorageManager.swift */,
+				4427B4D2270C670F0099A42B /* Extensions.swift */,
+			);
+			path = Managers;
 			sourceTree = "<group>";
 		};
 		442A83072708C6AC006D2082 /* General */ = {
@@ -134,10 +146,6 @@
 		447B4F41270762D70084FC98 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				4427B4F4270D683A0099A42B /* AuthManager.swift */,
-				442A830A2708CA02006D2082 /* DatabaseManager.swift */,
-				442A830C2708CA35006D2082 /* StorageManager.swift */,
-				4427B4D2270C670F0099A42B /* Extensions.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";

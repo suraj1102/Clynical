@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="XbL-Xa-Wpz">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="XbL-Xa-Wpz">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -53,7 +54,7 @@
         <!--Home View Controller-->
         <scene sceneID="dsf-db-8ES">
             <objects>
-                <viewController id="mhU-7L-AvZ" customClass="HomeViewController" customModule="Clynical" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="homeView" id="mhU-7L-AvZ" customClass="HomeViewController" customModule="Clynical" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="aCU-Dj-TvM">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -135,7 +136,6 @@
         <!--Start Up View Controller-->
         <scene sceneID="qPk-cK-blF">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dOs-jg-RBT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="StartUpView" modalPresentationStyle="fullScreen" id="XbL-Xa-Wpz" customClass="StartUpViewController" customModule="Clynical" customModuleProvider="target" propertyAccessControl="none" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7V1-An-PvN">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -144,13 +144,13 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dOs-jg-RBT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1020.2898550724639" y="-1711.6071428571429"/>
+            <point key="canvasLocation" x="1923" y="-346"/>
         </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="MDw-El-Ppz">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="CPs-mS-dnN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="SignUpView" id="qDd-aH-bfN" customClass="SignUpViewController" customModule="Clynical" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ulW-Ay-JJJ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -159,13 +159,13 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CPs-mS-dnN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-555" y="-1027"/>
+            <point key="canvasLocation" x="2483" y="333"/>
         </scene>
         <!--Log In View Controller-->
         <scene sceneID="sH0-2m-0p9">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Qwn-qV-hdi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="LogInView" modalPresentationStyle="fullScreen" id="u16-jz-P5F" customClass="LogInViewController" customModule="Clynical" customModuleProvider="target" propertyAccessControl="none" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Wo4-V6-MfD">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -174,8 +174,9 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Qwn-qV-hdi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1707.2463768115942" y="-1028.5714285714284"/>
+            <point key="canvasLocation" x="1330" y="331"/>
         </scene>
     </scenes>
     <resources>

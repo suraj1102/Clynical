@@ -30,7 +30,7 @@ class StartUpViewController: UIViewController {
         }
     }
     
-    
+    // Adding Views
     private let topView: UIView = {
         let topView = UIView()
         topView.clipsToBounds = true
@@ -74,7 +74,7 @@ class StartUpViewController: UIViewController {
         headerTitle.font = UIFont.init(name: "Trebuchet MS", size: 35)
         headerTitle.adjustsFontSizeToFitWidth = true
         
-        headerTitle.frame = CGRect.init(x: 0, y: view.safeAreaInsets.top, width: view.frame.size.width, height: topView.height * 0.20)
+        headerTitle.frame = CGRect.init(x: 0, y: view.safeAreaInsets.top, width: view.width, height: topView.height * 0.20)
         
         // Add headerImage
         let headerImage = UIImageView(image: UIImage(named: "moneyBrain"))
@@ -103,9 +103,10 @@ class StartUpViewController: UIViewController {
         logInButton.center = bottomView.center
         logInButton.backgroundColor = UIColor.init(named: "logInButtonBG")
         logInButton.layer.cornerRadius = 7.0
+        
         logInButton.frame = CGRect(x: bottomView.width * 0.20, y: 5 + (bottomView.height * 0.10), width: bottomView.width * 0.60, height: bottomView.height * 0.08)
                 
-//        logInButton.addTarget(Any?, action: didTapLogInButton, for: .touchUpInside)
+        logInButton.addTarget(self, action: #selector(didTapLogInButton), for: .touchUpInside)
 
    
         // Sign up button
@@ -118,18 +119,18 @@ class StartUpViewController: UIViewController {
             NSAttributedString.Key.foregroundColor : UIColor.white
         ]
         
-        let labelStr = NSMutableAttributedString(string:"Don't have an account?", attributes:labelAttrs)
+        let labelStr = NSMutableAttributedString(string:"Don't have an account? ", attributes:labelAttrs)
         
+            // Adding "Sign Up." text which is also underlined
         let buttonAttrs : [NSAttributedString.Key : Any] = [
             NSAttributedString.Key.font : UIFont.systemFont(ofSize: 17.0),
             NSAttributedString.Key.foregroundColor : UIColor.white,
             NSAttributedString.Key.underlineStyle : NSUnderlineStyle.single.rawValue
         ]
         
-        let buttonTitleStr = NSMutableAttributedString(string:" Sign Up.", attributes:buttonAttrs)
+        let buttonTitleStr = NSMutableAttributedString(string:"Sign Up.", attributes:buttonAttrs)
         
-        // ^ For adding underline.
-        
+            // Concantanating the two strings
         let buttonStr = NSMutableAttributedString()
         buttonStr.append(labelStr)
         buttonStr.append(buttonTitleStr)
@@ -138,10 +139,21 @@ class StartUpViewController: UIViewController {
         signUpButton.setTitleColor(.white, for: .normal)
         signUpButton.contentHorizontalAlignment = .center
         signUpButton.frame = CGRect(x: 0, y: (bottomView.height * 0.20) - 5, width: bottomView.width, height: bottomView.height * 0.10)
+        
+        signUpButton.addTarget(self, action: #selector(didTapSignUpButton), for: .touchUpInside)
+        
     }
     
-    private func didTapLogInButton() {
-        
+    @objc func didTapLogInButton(_ sender: UIButton) {
+        let logInVC = LogInViewController()
+        logInVC.modalPresentationStyle = .fullScreen
+        present(logInVC, animated: true)
+    }
+    
+    @objc func didTapSignUpButton(_ sender: UIButton) {
+        let signUpVC = SignUpViewController()
+        signUpVC.modalPresentationStyle = .fullScreen
+        present(signUpVC, animated: true)
     }
     
     override func viewDidLoad() {
