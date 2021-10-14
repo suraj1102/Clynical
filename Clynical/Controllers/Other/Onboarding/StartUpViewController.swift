@@ -13,11 +13,11 @@ class StartUpViewController: UIViewController {
     override func viewWillAppear (_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        handleNotAuthenticated()
+        handleAuthenticated()
 
     }
     
-    private func handleNotAuthenticated() {
+    private func handleAuthenticated() {
         // Check auth status
         if Auth.auth().currentUser != nil {
             

@@ -247,7 +247,7 @@ class SignUpViewController: UIViewController {
         
         guard let username = usernameField.text, !username.isEmpty,
               let email = emailField.text, !email.isEmpty,
-              let password = passwordField.text, !password.isEmpty, password.count >= 6 else{
+              let password = passwordField.text, !password.isEmpty, password.count >= 8 else{
             return
        
         }
@@ -255,9 +255,19 @@ class SignUpViewController: UIViewController {
             DispatchQueue.main.async {
                 if registered{
                     //all good to go
+                    
                 }
                 else {
                     //failed
+                    let alert = UIAlertController(title: "Sign Up Error",
+                                                  message: "We were unable to sign you up.",
+                                                  preferredStyle: .alert)
+                    
+                    alert.addAction(UIAlertAction(title: "Dismiss",
+                                                  style: .cancel,
+                                                  handler: nil))
+                    
+                    self.present(alert, animated: true)
                 }
             }
         }

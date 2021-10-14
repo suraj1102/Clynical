@@ -246,8 +246,8 @@ class LogInViewController: UIViewController {
             DispatchQueue.main.async {
                 if success {
                     // user log in
-                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                    let homeVC = storyboard.instantiateViewController(withIdentifier: "homeView") as! HomeViewController
+                    let homeVC = HomeViewController()
+                    homeVC.modalPresentationStyle = .fullScreen
                     self.present(homeVC, animated: true)
                 }
                 
