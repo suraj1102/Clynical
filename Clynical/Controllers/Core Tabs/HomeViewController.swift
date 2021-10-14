@@ -27,6 +27,7 @@ class HomeViewController: UIViewController {
     @objc private func didTapSettingsButton() {
         let settingsVC = SettingsViewController()
         settingsVC.title = "Settings"
+        settingsVC.modalPresentationStyle = .fullScreen
         navigationController?.pushViewController(settingsVC, animated: true)
     }
     

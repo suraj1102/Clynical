@@ -255,7 +255,15 @@ class SignUpViewController: UIViewController {
             DispatchQueue.main.async {
                 if registered{
                     //all good to go
+                    let alert = UIAlertController(title: "Account Created",
+                                                  message: "Please log in with your credentials.",
+                                                  preferredStyle: .alert)
                     
+                    alert.addAction(UIAlertAction(title: "Dismiss",
+                                                  style: .cancel,
+                                                  handler: nil))
+                    
+                    self.present(alert, animated: true)
                 }
                 else {
                     //failed

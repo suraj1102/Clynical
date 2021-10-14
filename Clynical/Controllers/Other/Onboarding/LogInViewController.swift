@@ -246,9 +246,11 @@ class LogInViewController: UIViewController {
             DispatchQueue.main.async {
                 if success {
                     // user log in
-                    let homeVC = HomeViewController()
-                    homeVC.modalPresentationStyle = .fullScreen
-                    self.present(homeVC, animated: true)
+                    let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                    let mainTabBar = storyBoard.instantiateViewController(withIdentifier: "mainTabBar")
+                    mainTabBar.modalPresentationStyle = .fullScreen
+                    self.present(mainTabBar, animated: false, completion: nil)
+                    
                 }
                 
                 else {

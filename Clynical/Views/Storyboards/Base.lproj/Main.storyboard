@@ -12,12 +12,12 @@
         <!--Tab Bar Controller-->
         <scene sceneID="wex-kV-NvK">
             <objects>
-                <tabBarController storyboardIdentifier="tabbar" id="3XO-ho-twY" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="mainTabBar" id="3XO-ho-twY" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="PzE-68-ykC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <color key="selectedImageTintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="selectedImageTintColor" systemColor="labelColor"/>
                     </tabBar>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="selectedIndex">
@@ -37,7 +37,7 @@
         <!--Navigation Controller-->
         <scene sceneID="lJa-K4-UY7">
             <objects>
-                <navigationController id="Cvb-Zv-VCi" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="homeNC" id="Cvb-Zv-VCi" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="" image="house.fill" catalog="system" id="6Kt-6I-OXx"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="oQF-2n-yYK">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -183,6 +183,9 @@
         <image name="book.closed.fill" catalog="system" width="115" height="128"/>
         <image name="house.fill" catalog="system" width="128" height="106"/>
         <image name="pills.fill" catalog="system" width="128" height="106"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

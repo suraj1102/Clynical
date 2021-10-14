@@ -37,6 +37,7 @@ final class SettingsViewController: UIViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         tableView.frame = view.bounds
+        
     }
     
     private func configureModles() {
