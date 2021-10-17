@@ -32,6 +32,7 @@ final class SettingsViewController: UIViewController {
         view.addSubview(tableView)
         tableView.delegate = self
         tableView.dataSource = self
+        
     }
     
     override func viewDidLayoutSubviews() {
@@ -46,26 +47,38 @@ final class SettingsViewController: UIViewController {
                 self?.didTapLogOut()
             }
         ]
-        print(section)
+        
+        data.append(section)
     }
     
     private func didTapLogOut() {
-        AuthManager.shared.logOut(completion: {success in
-            DispatchQueue.main.async {
-                if success {
-                    // Present auth screen
-                    let authVC = StartUpViewController()
-                    authVC.modalPresentationStyle = .fullScreen
-                    self.present(authVC, animated: true) {
-                        self.navigationController?.popToRootViewController(animated: false)
-                        self.tabBarController?.selectedIndex = 1
+        let actionSheet = UIAlertController(title: "Log Out",
+                                            message: "Are you sure you want to log out?",
+                                            preferredStyle: .actionSheet)
+        actionSheet.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        actionSheet.addAction(UIAlertAction(title: "Log Out", style: .destructive, handler: { _ in
+            AuthManager.shared.logOut(completion: {success in
+                DispatchQueue.main.async {
+                    if success {
+                        // Present auth screen
+                        let authVC = StartUpViewController()
+                        authVC.modalPresentationStyle = .fullScreen
+                        self.present(authVC, animated: true) {
+                            self.navigationController?.popToRootViewController(animated: false)
+                            self.tabBarController?.selectedIndex = 1
+                        }
+                    }
+                    else {
+                        // error
+                        fatalError("Could not log our user.")
                     }
                 }
-                else {
-                    // error
-                }
-            }
-        })
+            })
+        }))
+        
+        actionSheet.popoverPresentationController?.sourceView = tableView
+        actionSheet.popoverPresentationController?.sourceRect = tableView.bounds
+        present(actionSheet, animated: true)
     }
     
 }
