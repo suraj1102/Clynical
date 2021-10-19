@@ -9,7 +9,8 @@ import FirebaseDatabase
 
 public class DatabaseManager {
     static let shared = DatabaseManager()
-    private let database = Database.database().reference()
+    private let database = Database.database(url: "https://clynical-49376-default-rtdb.europe-west1.firebasedatabase.app").reference()
+    
     // MARK: - Public
     
     /// Check if username and email are available
@@ -18,6 +19,7 @@ public class DatabaseManager {
     ///    - username: String representing username
     public func canCreateNewUser(with email: String, username: String, completion: @escaping (Bool) -> Void) {
         completion(true)
+        return
     }
     
     /// Insert new user data to database
@@ -26,8 +28,8 @@ public class DatabaseManager {
     ///    - username: String representing username
     ///    - completion: Async callback for result if database entry succeded
     public func insertNewUser(with email: String, username: String,  completion: @escaping (Bool)-> Void){
-        let key = email.safeDatabaseKey()
-        database.child(key).setValue(["username": username]) { error, _ in
+
+        database.child(email.safeDatabaseKey()).setValue(["username": username]) { error, _ in
             if error == nil {
                 //succeeded
                 completion(true)
@@ -39,8 +41,6 @@ public class DatabaseManager {
                 return
             }
         }
-    
     }
-    
     
 }

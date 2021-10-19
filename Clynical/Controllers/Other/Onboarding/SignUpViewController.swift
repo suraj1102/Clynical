@@ -245,41 +245,53 @@ class SignUpViewController: UIViewController {
         emailField.resignFirstResponder()
         passwordField.resignFirstResponder()
         
-        guard let username = usernameField.text, !username.isEmpty,
-              let email = emailField.text, !email.isEmpty,
-              let password = passwordField.text, !password.isEmpty, password.count >= 8 else{
-            return
-       
-        }
-        AuthManager.shared.registerNewUser(username: username, email: email, password: password){ registered in
-            DispatchQueue.main.async {
-                if registered{
-                    //all good to go
-                    let alert = UIAlertController(title: "Account Created",
-                                                  message: "Please log in with your credentials.",
-                                                  preferredStyle: .alert)
+        if let username = usernameField.text, !username.isEmpty,
+           let email = emailField.text, !email.isEmpty,
+           let password = passwordField.text, !password.isEmpty, password.count >= 8 {
+                        
+            AuthManager.shared.registerNewUser(username: username, email: email, password: password) { registered in
+                
+                DispatchQueue.main.async {
+                    let registered = registered
+                    print(registered)
                     
-                    alert.addAction(UIAlertAction(title: "Dismiss",
-                                                  style: .cancel,
-                                                  handler: nil))
-                    
-                    self.present(alert, animated: true)
-                }
-                else {
-                    //failed
-                    let alert = UIAlertController(title: "Sign Up Error",
-                                                  message: "We were unable to sign you up.",
-                                                  preferredStyle: .alert)
-                    
-                    alert.addAction(UIAlertAction(title: "Dismiss",
-                                                  style: .cancel,
-                                                  handler: nil))
-                    
-                    self.present(alert, animated: true)
+                    if registered {
+                        //all good to go
+                        
+                        let alert = UIAlertController(title: "Account Created",
+                                                      message: "Please log in with your credentials.",
+                                                      preferredStyle: .alert)
+                        
+                        alert.addAction(UIAlertAction(title: "Dismiss",
+                                                      style: .cancel,
+                                                      handler: nil))
+                        
+                        self.present(alert, animated: true)
+                        
+                    }
+                    else if !registered {
+                        //failed
+                        
+                        let alert = UIAlertController(title: "Sign Up Error",
+                                                      message: "We were unable to sign you up.",
+                                                      preferredStyle: .alert)
+                        
+                        alert.addAction(UIAlertAction(title: "Dismiss",
+                                                      style: .cancel,
+                                                      handler: nil))
+                        
+                        self.present(alert, animated: true)
+                    }
                 }
             }
         }
+        
+        else {
+            return
+        }
+
     }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()

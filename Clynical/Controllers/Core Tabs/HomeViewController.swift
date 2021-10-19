@@ -6,6 +6,7 @@
 //
 
 import FirebaseAuth
+import UserNotifications
 import UIKit
 
 class HomeViewController: UIViewController {
@@ -15,6 +16,8 @@ class HomeViewController: UIViewController {
         
         view.backgroundColor = .systemBackground
         configureNavigationBar()
+        
+        askNotifPermission()
     }
     
     private func configureNavigationBar() {
@@ -22,6 +25,17 @@ class HomeViewController: UIViewController {
                                                             style: .done,
                                                             target: self,
                                                             action: #selector(didTapSettingsButton))
+    }
+    
+    private func askNotifPermission() {
+        // asks user for notification permission
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound], completionHandler: {success, error in
+            if success {
+                return
+            } else {
+                return
+            }
+        })
     }
     
     @objc private func didTapSettingsButton() {

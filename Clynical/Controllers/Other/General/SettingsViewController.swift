@@ -21,7 +21,7 @@ final class SettingsViewController: UIViewController {
                            forCellReuseIdentifier: "cell")
         return tableView
     }()
-    
+
     private var data = [[SettingCellModel]]()
 
     override func viewDidLoad() {
