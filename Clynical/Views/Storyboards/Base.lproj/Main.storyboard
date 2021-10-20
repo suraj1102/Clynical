@@ -21,7 +21,7 @@
                     </tabBar>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="selectedIndex">
-                            <integer key="value" value="1"/>
+                            <integer key="value" value="0"/>
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                     <connections>
@@ -118,7 +118,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="table" destination="3TV-s2-UHc" id="gxt-YM-Wez"/>
+                        <outlet property="table" destination="3TV-s2-UHc" id="bRj-z2-454"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pzR-eX-0RG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

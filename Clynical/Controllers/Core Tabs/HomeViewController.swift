@@ -29,10 +29,8 @@ class HomeViewController: UIViewController {
     
     private func askNotifPermission() {
         // asks user for notification permission
-        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound], completionHandler: {success, error in
-            if success {
-                return
-            } else {
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound, .provisional], completionHandler: {success, error in
+            if error != nil {
                 return
             }
         })

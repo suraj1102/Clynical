@@ -5,6 +5,7 @@
 //  Created by Suraj Dayma on 01/10/2021.
 //
 
+import UserNotifications
 import UIKit
 
 class MedsViewController: UIViewController {
@@ -21,38 +22,54 @@ class MedsViewController: UIViewController {
     
     @IBAction func didTapAdd() {
         // Show AddMedViewController
+        guard let vc = storyboard?.instantiateViewController(withIdentifier: "addMedView") as? AddMedViewController else { return }
+        vc.title = "Add Med Reminder"
+        vc.navigationItem.largeTitleDisplayMode = .never
+        vc.completion = { title, body, date in
+            
+        }
         
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     @IBAction func didTapTest() {
-        UNUserNotificationCenter.current().getNotificationSettings { (settings) in
+        print("\ntest button pressed\n")
+        UNUserNotificationCenter.current().getNotificationSettings { settings in
             
-            if settings.authorizationStatus == .authorized {
-                // fire test notification
-                self.scheduleTest()
+            guard settings.authorizationStatus == .authorized, settings.authorizationStatus == .provisional else {
+                self.askPermission()
+                return
             }
-            else {
-                // ask permission
-                UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound], completionHandler: {success, error in
-                    if success {
-                        self.didTapTest()
-                    }
-                    else {
-                        return
-                    }
-                })
-            }
+            
+            print("\n authorised \n")
+            // fire test notification
+            self.scheduleTest()
+            
         }
     }
     
-    func scheduleTest() {
+    private func askPermission() {
+        // ask permission
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound, .provisional], completionHandler: {success, error in
+            if success {
+                self.didTapTest()
+            }
+            else {
+                return
+            }
+        })
+    }
+    
+    private func scheduleTest() {
         let content = UNMutableNotificationContent()
         content.title = "Hello World"
         content.sound = .default
         content.body = "This is a test for the notifications in this app. If you are seeing this it means all good."
         
-        let targetDate = Date().addingTimeInterval(10)
-        let trigger = UNCalendarNotificationTrigger(dateMatching: Calendar.current.dateComponents([.year, .month, .day, .minute, .second], from: targetDate), repeats: false)
+        print(content.body)
+        
+        let targetDate = Date()
+        let trigger = UNCalendarNotificationTrigger(dateMatching: Calendar.current.dateComponents([.year, .month, .day, .hour, .minute, .second], from: targetDate), repeats: false)
         
         let request = UNNotificationRequest(identifier: "some_id", content: content, trigger: trigger)
         UNUserNotificationCenter.current().add(request, withCompletionHandler: {error in
@@ -65,13 +82,12 @@ class MedsViewController: UIViewController {
 }
     
 
-
-
 extension MedsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
     }
 }
+
 
 extension MedsViewController: UITableViewDataSource {
     
