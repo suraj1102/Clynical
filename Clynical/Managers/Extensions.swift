@@ -34,31 +34,22 @@ extension UIView {
     }
     
 }
+
+
 extension String{
     func safeDatabaseKey() -> String{
         return self.replacingOccurrences(of: ".", with: "-").replacingOccurrences(of: "@", with: "-")
     }
 }
 
-extension UIViewController {
+    
+extension Date {
+    func localDate() -> Date {
+        let nowUTC = Date()
+        let timeZoneOffset = Double(TimeZone.current.secondsFromGMT(for: nowUTC))
+        guard let localDate = Calendar.current.date(byAdding: .second, value: Int(timeZoneOffset), to: nowUTC) else {return Date()}
 
-    func presentDetail(_ viewControllerToPresent: UIViewController) {
-        let transition = CATransition()
-        transition.duration = 0.25
-        transition.type = CATransitionType.push
-        transition.subtype = CATransitionSubtype.fromRight
-        self.view.window!.layer.add(transition, forKey: kCATransition)
-
-        present(viewControllerToPresent, animated: false)
-    }
-
-    func dismissDetail() {
-        let transition = CATransition()
-        transition.duration = 0.25
-        transition.type = CATransitionType.push
-        transition.subtype = CATransitionSubtype.fromLeft
-        self.view.window!.layer.add(transition, forKey: kCATransition)
-
-        dismiss(animated: false)
+        return localDate
     }
 }
+

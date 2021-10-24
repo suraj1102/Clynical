@@ -10,38 +10,6 @@ import UIKit
 
 class StartUpViewController: UIViewController {
     
-    // save a ref to the handler
-    private var authListener: AuthStateDidChangeListenerHandle?
-    
-    // Check for auth status some where
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        authListener = Auth.auth().addStateDidChangeListener { (auth, user) in
-            
-            if let user = user {
-                // User is signed in
-                // let the user in?
-                print(user)
-                let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-                let mainTabBar = storyBoard.instantiateViewController(withIdentifier: "mainTabBar")
-                mainTabBar.modalPresentationStyle = .fullScreen
-                self.present(mainTabBar, animated: false, completion: nil)
-                
-            }
-            else {
-                // No user
-            }
-        }
-        
-        Auth.auth().removeStateDidChangeListener(authListener!)
-        
-    }
-    
-    // Remove the listener once it's no longer needed
-    
-
-    
     // Adding Views
     private let topView: UIView = {
         let topView = UIView()

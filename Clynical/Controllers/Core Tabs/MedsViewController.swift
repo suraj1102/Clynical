@@ -33,15 +33,13 @@ class MedsViewController: UIViewController {
     }
     
     @IBAction func didTapTest() {
-        print("\ntest button pressed\n")
         UNUserNotificationCenter.current().getNotificationSettings { settings in
             
-            guard settings.authorizationStatus == .authorized, settings.authorizationStatus == .provisional else {
+            guard settings.authorizationStatus == .authorized else {
                 self.askPermission()
                 return
             }
             
-            print("\n authorised \n")
             // fire test notification
             self.scheduleTest()
             
@@ -50,37 +48,39 @@ class MedsViewController: UIViewController {
     
     private func askPermission() {
         // ask permission
-        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound, .provisional], completionHandler: {success, error in
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound], completionHandler: {success, error in
             if success {
                 self.didTapTest()
             }
             else {
                 return
-            }
+            } 
         })
     }
     
     private func scheduleTest() {
         let content = UNMutableNotificationContent()
-        content.title = "Hello World"
-        content.sound = .default
+        content.title = "Test Notification"
         content.body = "This is a test for the notifications in this app. If you are seeing this it means all good."
+        content.sound = UNNotificationSound.default
+
         
-        print(content.body)
+        let targetDate = Date().addingTimeInterval(7)
+
+        var calendar = Calendar.current
+        calendar.timeZone = .current
         
-        let targetDate = Date()
-        let trigger = UNCalendarNotificationTrigger(dateMatching: Calendar.current.dateComponents([.year, .month, .day, .hour, .minute, .second], from: targetDate), repeats: false)
+        let targetDateComponets = calendar.dateComponents([.year, .month, .day, .hour, .minute, .second], from: targetDate)
         
-        let request = UNNotificationRequest(identifier: "some_id", content: content, trigger: trigger)
-        UNUserNotificationCenter.current().add(request, withCompletionHandler: {error in
-            if error != nil {
-                print("some error occured in requesting notification.")
-            }
-        })
+        let trigger = UNCalendarNotificationTrigger(dateMatching: targetDateComponets, repeats: false)
+        let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
+        UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
+        
     }
     
 }
     
+
 
 extension MedsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -110,6 +110,6 @@ extension MedsViewController: UITableViewDataSource {
 struct myReminder {
     let title: String
     let date: Date
-    let description: String?
+    let description: String
 }
 

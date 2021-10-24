@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="XbL-Xa-Wpz">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="3XO-ho-twY">
     <device id="retina6_1" orientation="portrait" appearance="dark"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -21,7 +21,7 @@
                     </tabBar>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="selectedIndex">
-                            <integer key="value" value="0"/>
+                            <integer key="value" value="1"/>
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                     <connections>
@@ -39,8 +39,8 @@
             <objects>
                 <navigationController storyboardIdentifier="homeNC" id="Cvb-Zv-VCi" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="" image="house.fill" catalog="system" id="6Kt-6I-OXx"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="oQF-2n-yYK">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="oQF-2n-yYK">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -51,7 +51,7 @@
             </objects>
             <point key="canvasLocation" x="-1020" y="467"/>
         </scene>
-        <!--Home View Controller-->
+        <!--Home-->
         <scene sceneID="dsf-db-8ES">
             <objects>
                 <viewController storyboardIdentifier="homeView" id="mhU-7L-AvZ" customClass="HomeViewController" customModule="Clynical" customModuleProvider="target" sceneMemberID="viewController">
@@ -61,13 +61,13 @@
                         <viewLayoutGuide key="safeArea" id="ZD0-my-Awu"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" id="2p6-TI-Dtx"/>
+                    <navigationItem key="navigationItem" title="Home" id="2p6-TI-Dtx"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tmf-PJ-ysd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1020" y="1227"/>
         </scene>
-        <!--Journal View Controller-->
+        <!--Journal-->
         <scene sceneID="rhd-Ev-hHn">
             <objects>
                 <viewController id="fRb-FT-QN9" customClass="JournalViewController" customModule="Clynical" customModuleProvider="target" sceneMemberID="viewController">
@@ -77,7 +77,7 @@
                         <viewLayoutGuide key="safeArea" id="9Ds-jr-CDk"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" id="Dxb-Xm-wfd"/>
+                    <navigationItem key="navigationItem" title="Journal" id="Dxb-Xm-wfd"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rhd-za-54l" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -145,8 +145,8 @@
             <objects>
                 <navigationController id="uMG-gh-U8e" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="" image="book.closed.fill" catalog="system" id="Gvb-lS-xty"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="uvg-HU-qTJ">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="uvg-HU-qTJ">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -155,7 +155,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MxE-HC-W71" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-22" y="468"/>
+            <point key="canvasLocation" x="-23" y="467"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="26N-1E-W7D">
@@ -177,7 +177,7 @@
         <!--Start Up View Controller-->
         <scene sceneID="qPk-cK-blF">
             <objects>
-                <viewController storyboardIdentifier="StartUpView" modalPresentationStyle="fullScreen" id="XbL-Xa-Wpz" customClass="StartUpViewController" customModule="Clynical" customModuleProvider="target" propertyAccessControl="none" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="startUpView" modalPresentationStyle="fullScreen" id="XbL-Xa-Wpz" customClass="StartUpViewController" customModule="Clynical" customModuleProvider="target" propertyAccessControl="none" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7V1-An-PvN">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -192,7 +192,7 @@
         <!--Sign Up View Controller-->
         <scene sceneID="MDw-El-Ppz">
             <objects>
-                <viewController storyboardIdentifier="SignUpView" id="qDd-aH-bfN" customClass="SignUpViewController" customModule="Clynical" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="signUpView" id="qDd-aH-bfN" customClass="SignUpViewController" customModule="Clynical" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ulW-Ay-JJJ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -207,7 +207,7 @@
         <!--Log In View Controller-->
         <scene sceneID="sH0-2m-0p9">
             <objects>
-                <viewController storyboardIdentifier="LogInView" modalPresentationStyle="fullScreen" id="u16-jz-P5F" customClass="LogInViewController" customModule="Clynical" customModuleProvider="target" propertyAccessControl="none" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="logInView" modalPresentationStyle="fullScreen" id="u16-jz-P5F" customClass="LogInViewController" customModule="Clynical" customModuleProvider="target" propertyAccessControl="none" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Wo4-V6-MfD">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
