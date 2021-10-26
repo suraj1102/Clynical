@@ -11,7 +11,7 @@ import UIKit
 class MedsViewController: UIViewController {
     
     @IBOutlet var table: UITableView!
-    var Models = [myReminder]()
+    var models = [myReminder]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,7 +26,29 @@ class MedsViewController: UIViewController {
         vc.title = "Add Med Reminder"
         vc.navigationItem.largeTitleDisplayMode = .never
         vc.completion = { title, body, date in
-            
+            DispatchQueue.main.async {
+                self.navigationController?.popToRootViewController(animated: true)
+                let new = myReminder(title: title, description: body, date: date, identifier: "id_\(title)")
+                self.models.append(new)
+                self.table.reloadData()
+                
+                let content = UNMutableNotificationContent()
+                content.title = title
+                content.body = body
+                content.sound = UNNotificationSound.default
+
+                
+                let targetDate = date
+
+                let calendar = Calendar.current
+                
+                let targetDateComponets = calendar.dateComponents([.year, .month, .day, .hour, .minute, .second], from: targetDate)
+                
+                let trigger = UNCalendarNotificationTrigger(dateMatching: targetDateComponets, repeats: false)
+                let request = UNNotificationRequest(identifier: new.identifier, content: content, trigger: trigger)
+                UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
+                
+            }
         }
         
         navigationController?.pushViewController(vc, animated: true)
@@ -96,12 +118,12 @@ extension MedsViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return Models.count
+        return models.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel?.text = Models[indexPath.row].title
+        cell.textLabel?.text = models[indexPath.row].title
         return cell
     }
     
@@ -109,7 +131,8 @@ extension MedsViewController: UITableViewDataSource {
 
 struct myReminder {
     let title: String
-    let date: Date
     let description: String
+    let date: Date
+    let identifier: String
 }
 

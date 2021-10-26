@@ -7,7 +7,7 @@
 
 import UIKit
 
-class AddMedViewController: UIViewController {
+class AddMedViewController: UIViewController, UITextFieldDelegate {
 
     // UI components needed for notifications
     @IBOutlet var titleField: UITextField!
@@ -18,16 +18,27 @@ class AddMedViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Save", style: .done, target: self, action: #selector(didTapSave))
+        
+        titleField.delegate = self
+        bodyField.delegate = self
+        
     }
     
-    @IBAction func didTapSave() {
+    @objc func didTapSave() {
         // Validate user inputs and save med
         if let titleText = titleField.text, !titleText.isEmpty,
            let bodyText = bodyField.text, !bodyText.isEmpty {
-            let endDate = datePicker.date
-            print(endDate)
+            let targetDate = datePicker.date
+
+            completion?(titleText, bodyText, targetDate)
         }
            
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
 }
