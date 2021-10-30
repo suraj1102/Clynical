@@ -62,9 +62,18 @@ class MedsViewController: UIViewController {
                 return
             }
             
-            // fire test notification
-            self.scheduleTest()
-            
+            DispatchQueue.main.async {
+                let alert = UIAlertController(title: "Test Notification.",
+                                              message: "Please exit the app and wait for 5 seconds to recieve test notification.",
+                                              preferredStyle: .alert)
+                
+                alert.addAction(UIAlertAction(title: "Dismiss",
+                                              style: .cancel) { _ in
+                    self.scheduleTest()
+                })
+                
+                self.present(alert, animated: true)
+            }
         }
     }
     
@@ -87,7 +96,7 @@ class MedsViewController: UIViewController {
         content.sound = UNNotificationSound.default
 
         
-        let targetDate = Date().addingTimeInterval(7)
+        let targetDate = Date().addingTimeInterval(5)
 
         var calendar = Calendar.current
         calendar.timeZone = .current

@@ -238,6 +238,17 @@ class LogInViewController: UIViewController {
         else {
             // username
             username = usernameEmail
+            let alert = UIAlertController(title: "Log In Error",
+                                          message: "Please type in your email.",
+                                          preferredStyle: .alert)
+            
+            alert.addAction(UIAlertAction(title: "Dismiss",
+                                          style: .cancel,
+                                          handler: nil))
+            
+            self.present(alert, animated: true)
+            
+            return
         }
         
         // Log in functionality

@@ -24,6 +24,8 @@
 		447B4F4E270765360084FC98 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447B4F4D270765360084FC98 /* SignUpViewController.swift */; };
 		447B4F50270767AF0084FC98 /* AddMedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447B4F4F270767AF0084FC98 /* AddMedViewController.swift */; };
 		447B4F52270767BB0084FC98 /* EditMedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447B4F51270767BB0084FC98 /* EditMedViewController.swift */; };
+		4483051B272D33D000E619AF /* ExistingNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4483051A272D33D000E619AF /* ExistingNoteViewController.swift */; };
+		4483051D272D33DE00E619AF /* EntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4483051C272D33DE00E619AF /* EntryViewController.swift */; };
 		44AE5A0527134660001F57F4 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AE5A0427134660001F57F4 /* SettingsViewController.swift */; };
 		44BF06CA2708BED300DEDA8D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 44BF06C92708BED300DEDA8D /* GoogleService-Info.plist */; };
 		EC2D59F28CA79D754F913DFA /* Pods_Clynical.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5627C43563BEB0DCF42B1707 /* Pods_Clynical.framework */; };
@@ -49,6 +51,8 @@
 		447B4F4D270765360084FC98 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		447B4F4F270767AF0084FC98 /* AddMedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMedViewController.swift; sourceTree = "<group>"; };
 		447B4F51270767BB0084FC98 /* EditMedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditMedViewController.swift; sourceTree = "<group>"; };
+		4483051A272D33D000E619AF /* ExistingNoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExistingNoteViewController.swift; sourceTree = "<group>"; };
+		4483051C272D33DE00E619AF /* EntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryViewController.swift; sourceTree = "<group>"; };
 		44AE5A0427134660001F57F4 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		44BF06C92708BED300DEDA8D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5627C43563BEB0DCF42B1707 /* Pods_Clynical.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Clynical.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -99,7 +103,6 @@
 			isa = PBXGroup;
 			children = (
 				447B4F42270762DC0084FC98 /* Resources */,
-				447B4F41270762D70084FC98 /* Models */,
 				4427B4F6270F35BF0099A42B /* Managers */,
 				447B4F40270762C30084FC98 /* Views */,
 				447B4F3F270762BD0084FC98 /* Controllers */,
@@ -124,6 +127,8 @@
 				44AE5A0427134660001F57F4 /* SettingsViewController.swift */,
 				447B4F4F270767AF0084FC98 /* AddMedViewController.swift */,
 				447B4F51270767BB0084FC98 /* EditMedViewController.swift */,
+				4483051A272D33D000E619AF /* ExistingNoteViewController.swift */,
+				4483051C272D33DE00E619AF /* EntryViewController.swift */,
 			);
 			path = General;
 			sourceTree = "<group>";
@@ -144,13 +149,6 @@
 				447B4F43270763210084FC98 /* Storyboards */,
 			);
 			path = Views;
-			sourceTree = "<group>";
-		};
-		447B4F41270762D70084FC98 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Models;
 			sourceTree = "<group>";
 		};
 		447B4F42270762DC0084FC98 /* Resources */ = {
@@ -328,9 +326,11 @@
 				44209BCA26FC8A1A00C11555 /* HomeViewController.swift in Sources */,
 				442A830B2708CA02006D2082 /* DatabaseManager.swift in Sources */,
 				44339FEE270B77080030F2EB /* StartUpViewController.swift in Sources */,
+				4483051D272D33DE00E619AF /* EntryViewController.swift in Sources */,
 				447B4F52270767BB0084FC98 /* EditMedViewController.swift in Sources */,
 				4427B4F5270D683A0099A42B /* AuthManager.swift in Sources */,
 				442A830D2708CA35006D2082 /* StorageManager.swift in Sources */,
+				4483051B272D33D000E619AF /* ExistingNoteViewController.swift in Sources */,
 				44209BC626FC8A1A00C11555 /* AppDelegate.swift in Sources */,
 				447B4F4C2707651F0084FC98 /* LogInViewController.swift in Sources */,
 				44AE5A0527134660001F57F4 /* SettingsViewController.swift in Sources */,

@@ -6,10 +6,13 @@
 //
 
 import FirebaseAuth
+import FirebaseDatabase
 import UserNotifications
 import UIKit
 
 class HomeViewController: UIViewController {
+    
+    @IBOutlet var welcomeLabel: UILabel!
     
     // save a ref to the handler
     private var authListener: AuthStateDidChangeListenerHandle?
@@ -44,6 +47,8 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         
         view.backgroundColor = .systemBackground
+        welcomeLabel.text = "Welcome :)"
+        
         configureNavigationBar()
         
         askNotifPermission()
