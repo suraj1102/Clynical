@@ -20,7 +20,6 @@ class JournalViewController: UIViewController, UITableViewDelegate, UITableViewD
         super.viewDidLoad()
         table.delegate = self
         table.dataSource = self
-        title = ""
     }
     
     @IBAction func didTapNewNote(){
